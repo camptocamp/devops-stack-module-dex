@@ -50,8 +50,9 @@ variable "connectors" {
 
 variable "clients" {
   type = map(object({
-    id   = string
-    name = string
+    id     = string
+    name   = string
+    secret = string
 
     public = bool
 

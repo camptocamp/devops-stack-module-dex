@@ -24,11 +24,10 @@ locals {
         connectors = var.connectors
 
         staticClients = [
-          for client_id, client in var.clients :
-          {
+          for client in var.clients : {
             id     = client.id
             name   = client.name
-            secret = resource.random_password.client_secret[client_id].result
+            secret = client.secret
 
             public = client.public
 
