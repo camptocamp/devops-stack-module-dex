@@ -50,7 +50,7 @@ resource "argocd_application" "this" {
     source {
       repo_url        = var.source_repository_url
       path            = "helm"
-      target_revision = coalesce(var.source_target_revision, file("${path.module}/version.txt"))
+      target_revision = coalesce(var.source_target_revision, trimspace(file("${path.module}/version.txt")))
 
       helm {
         values = data.utils_deep_merge_yaml.helm_values.output
