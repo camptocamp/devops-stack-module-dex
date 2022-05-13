@@ -27,7 +27,7 @@ locals {
           for client in var.clients : {
             id     = client.id
             name   = client.name
-            secret = client.secret
+            secret = (client.secret != null) ? client.secret : ""
 
             public = client.public
 
