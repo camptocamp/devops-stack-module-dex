@@ -6,6 +6,10 @@ locals {
 
   helm_values = {
     dex = {
+      image = {
+        repository = (var.custom_image != null) ? split(":", var.custom_image)[0] : "ghcr.io/dexidp/dex"
+        tag        = (var.custom_image != null) ? split(":", var.custom_image)[1] : ""
+      }
       config = {
         issuer = local.issuer_url
 
