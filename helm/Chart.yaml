@@ -4,5 +4,5 @@ name: "dex"
 version: "0"
 dependencies:
   - name: "dex"
-    version: "^0.6"
+    version: "^0"
     repository: "https://charts.dexidp.io"
