@@ -16,6 +16,12 @@ variable "source_target_revision" {
   default = null
 }
 
+variable "custom_image" {
+  type = string
+
+  default = null
+}
+
 variable "destination_namespace" {
   type = string
 
