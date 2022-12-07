@@ -83,6 +83,14 @@ Type: `any`
 
 The following input variables are optional (have default values):
 
+==== [[input_app_autosync]] <<input_app_autosync,app_autosync>>
+
+Description: n/a
+
+Type: `bool`
+
+Default: `false`
+
 ==== [[input_custom_image]] <<input_custom_image,custom_image>>
 
 Description: n/a
@@ -193,6 +201,12 @@ Description: n/a
 [cols="a,a,a,a,a",options="header,autowidth"]
 |===
 |Name |Description |Type |Default |Required
+|[[input_app_autosync]] <<input_app_autosync,app_autosync>>
+|n/a
+|`bool`
+|`false`
+|no
+
 |[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 |n/a
 |`string`
