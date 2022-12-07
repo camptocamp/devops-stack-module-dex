@@ -77,3 +77,8 @@ variable "dependency_ids" {
 
   default = {}
 }
+
+variable "app_autosync" {
+  type = bool
+  default = false
+}

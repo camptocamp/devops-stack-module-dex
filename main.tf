@@ -1,3 +1,7 @@
+locals {
+  autosync = var.app_autosync ? { "allow_empty" = false, "prune" = true, "self_heal" = true } : {}
+}
+
 resource "null_resource" "dependencies" {
   triggers = var.dependency_ids
 }
@@ -63,11 +67,7 @@ resource "argocd_application" "this" {
     }
 
     sync_policy {
-      automated = {
-        prune       = true
-        self_heal   = true
-        allow_empty = false
-      }
+      automated = local.autosync 
 
       sync_options = [
         "CreateNamespace=true"
