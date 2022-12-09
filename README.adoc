@@ -89,7 +89,7 @@ Description: n/a
 
 Type: `bool`
 
-Default: `false`
+Default: `true`
 
 ==== [[input_custom_image]] <<input_custom_image,custom_image>>
 
@@ -204,7 +204,7 @@ Description: n/a
 |[[input_app_autosync]] <<input_app_autosync,app_autosync>>
 |n/a
 |`bool`
-|`false`
+|`true`
 |no
 
 |[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
