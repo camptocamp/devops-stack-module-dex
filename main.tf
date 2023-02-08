@@ -63,11 +63,7 @@ resource "argocd_application" "this" {
     }
 
     sync_policy {
-      automated = {
-        prune       = true
-        self_heal   = true
-        allow_empty = false
-      }
+      automated = var.app_autosync 
 
       sync_options = [
         "CreateNamespace=true"
