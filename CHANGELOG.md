@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.2](https://github.com/camptocamp/devops-stack-module-dex/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2023-02-08)
+
+
+### Features
+
+* **main:** introduce a variable to set autosync ([#6](https://github.com/camptocamp/devops-stack-module-dex/issues/6)) ([ed96f1c](https://github.com/camptocamp/devops-stack-module-dex/commit/ed96f1c95f58294c2aeaf65024b1d33706cdb2c3))
+
 ## 1.0.0-alpha.1 (2022-11-18)
 
 
