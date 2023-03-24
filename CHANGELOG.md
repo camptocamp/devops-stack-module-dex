@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.3](https://github.com/camptocamp/devops-stack-module-dex/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2023-03-24)
+
+
+### Documentation
+
+* add docs structure and PR template ([#8](https://github.com/camptocamp/devops-stack-module-dex/issues/8)) ([fa25145](https://github.com/camptocamp/devops-stack-module-dex/commit/fa25145814a5ba2997ece08757896b58d76727dd))
+
 ## [1.0.0-alpha.2](https://github.com/camptocamp/devops-stack-module-dex/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2023-02-08)
 
 
