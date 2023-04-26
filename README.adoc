@@ -5,11 +5,11 @@
 
 The following providers are used by this module:
 
+- [[provider_utils]] <<provider_utils,utils>>
+
 - [[provider_argocd]] <<provider_argocd,argocd>>
 
 - [[provider_null]] <<provider_null,null>>
-
-- [[provider_utils]] <<provider_utils,utils>>
 
 === Resources
 
@@ -25,6 +25,12 @@ The following resources are used by this module:
 
 The following input variables are required:
 
+==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
+
+Description: n/a
+
+Type: `string`
+
 ==== [[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 
 Description: n/a
@@ -36,6 +42,18 @@ Type: `string`
 Description: n/a
 
 Type: `string`
+
+==== [[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
+
+Description: n/a
+
+Type: `string`
+
+==== [[input_connectors]] <<input_connectors,connectors>>
+
+Description: n/a
+
+Type: `any`
 
 ==== [[input_clients]] <<input_clients,clients>>
 
@@ -55,83 +73,9 @@ map(object({
   }))
 ----
 
-==== [[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
-
-Description: n/a
-
-Type: `string`
-
-==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
-
-Description: n/a
-
-Type: `string`
-
-==== [[input_connectors]] <<input_connectors,connectors>>
-
-Description: n/a
-
-Type: `any`
-
 === Optional Inputs
 
 The following input variables are optional (have default values):
-
-==== [[input_app_autosync]] <<input_app_autosync,app_autosync>>
-
-Description: Automated sync options for the Argo CD Application resource.
-
-Type:
-[source,hcl]
-----
-object({
-    allow_empty = optional(bool)
-    prune       = optional(bool)
-    self_heal   = optional(bool)
-  })
-----
-
-Default:
-[source,json]
-----
-{
-  "allow_empty": false,
-  "prune": true,
-  "self_heal": true
-}
-----
-
-==== [[input_custom_image]] <<input_custom_image,custom_image>>
-
-Description: n/a
-
-Type: `string`
-
-Default: `null`
-
-==== [[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
-
-Description: n/a
-
-Type: `map(string)`
-
-Default: `{}`
-
-==== [[input_destination_namespace]] <<input_destination_namespace,destination_namespace>>
-
-Description: n/a
-
-Type: `string`
-
-Default: `"dex"`
-
-==== [[input_helm_values]] <<input_helm_values,helm_values>>
-
-Description: n/a
-
-Type: `any`
-
-Default: `[]`
 
 ==== [[input_name]] <<input_name,name>>
 
@@ -157,27 +101,83 @@ Type: `string`
 
 Default: `null`
 
+==== [[input_custom_image]] <<input_custom_image,custom_image>>
+
+Description: n/a
+
+Type: `string`
+
+Default: `null`
+
+==== [[input_destination_namespace]] <<input_destination_namespace,destination_namespace>>
+
+Description: n/a
+
+Type: `string`
+
+Default: `"dex"`
+
+==== [[input_helm_values]] <<input_helm_values,helm_values>>
+
+Description: n/a
+
+Type: `any`
+
+Default: `[]`
+
 ==== [[input_target_revision]] <<input_target_revision,target_revision>>
 
 Description: Override for target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0-alpha.2"`
+Default: `"v1.0.0-alpha.3"`
+
+==== [[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
+
+Description: n/a
+
+Type: `map(string)`
+
+Default: `{}`
+
+==== [[input_app_autosync]] <<input_app_autosync,app_autosync>>
+
+Description: Automated sync options for the Argo CD Application resource.
+
+Type:
+[source,hcl]
+----
+object({
+    allow_empty = optional(bool)
+    prune       = optional(bool)
+    self_heal   = optional(bool)
+  })
+----
+
+Default:
+[source,json]
+----
+{
+  "allow_empty": false,
+  "prune": true,
+  "self_heal": true
+}
+----
 
 === Outputs
 
 The following outputs are exported:
-
-==== [[output_clients]] <<output_clients,clients>>
-
-Description: n/a
 
 ==== [[output_id]] <<output_id,id>>
 
 Description: n/a
 
 ==== [[output_issuer_url]] <<output_issuer_url,issuer_url>>
+
+Description: n/a
+
+==== [[output_clients]] <<output_clients,clients>>
 
 Description: n/a
 // END_TF_DOCS
@@ -189,9 +189,9 @@ Description: n/a
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
+|[[provider_utils]] <<provider_utils,utils>> |n/a
 |[[provider_argocd]] <<provider_argocd,argocd>> |n/a
 |[[provider_null]] <<provider_null,null>> |n/a
-|[[provider_utils]] <<provider_utils,utils>> |n/a
 |===
 
 = Resources
@@ -211,6 +211,104 @@ Description: n/a
 [cols="a,a,a,a,a",options="header,autowidth"]
 |===
 |Name |Description |Type |Default |Required
+|[[input_name]] <<input_name,name>>
+|n/a
+|`string`
+|`"dex"`
+|no
+
+|[[input_source_repository_url]] <<input_source_repository_url,source_repository_url>>
+|n/a
+|`string`
+|`"https://github.com/camptocamp/devops-stack-module-dex.git"`
+|no
+
+|[[input_source_target_revision]] <<input_source_target_revision,source_target_revision>>
+|n/a
+|`string`
+|`null`
+|no
+
+|[[input_custom_image]] <<input_custom_image,custom_image>>
+|n/a
+|`string`
+|`null`
+|no
+
+|[[input_destination_namespace]] <<input_destination_namespace,destination_namespace>>
+|n/a
+|`string`
+|`"dex"`
+|no
+
+|[[input_helm_values]] <<input_helm_values,helm_values>>
+|n/a
+|`any`
+|`[]`
+|no
+
+|[[input_cluster_name]] <<input_cluster_name,cluster_name>>
+|n/a
+|`string`
+|n/a
+|yes
+
+|[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
+|n/a
+|`string`
+|n/a
+|yes
+
+|[[input_target_revision]] <<input_target_revision,target_revision>>
+|Override for target revision of the application chart.
+|`string`
+|`"v1.0.0-alpha.3"`
+|no
+
+|[[input_base_domain]] <<input_base_domain,base_domain>>
+|n/a
+|`string`
+|n/a
+|yes
+
+|[[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
+|n/a
+|`string`
+|n/a
+|yes
+
+|[[input_connectors]] <<input_connectors,connectors>>
+|n/a
+|`any`
+|n/a
+|yes
+
+|[[input_clients]] <<input_clients,clients>>
+|n/a
+|
+
+[source]
+----
+map(object({
+    id     = string
+    name   = string
+    secret = string
+
+    public = bool
+
+    redirect_uris = list(string)
+  }))
+----
+
+|n/a
+|yes
+
+|[[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
+|n/a
+|`map(string)`
+|`{}`
+|no
+
 |[[input_app_autosync]] <<input_app_autosync,app_autosync>>
 |Automated sync options for the Argo CD Application resource.
 |
@@ -237,104 +335,6 @@ object({
 
 |no
 
-|[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
-|n/a
-|`string`
-|n/a
-|yes
-
-|[[input_base_domain]] <<input_base_domain,base_domain>>
-|n/a
-|`string`
-|n/a
-|yes
-
-|[[input_clients]] <<input_clients,clients>>
-|n/a
-|
-
-[source]
-----
-map(object({
-    id     = string
-    name   = string
-    secret = string
-
-    public = bool
-
-    redirect_uris = list(string)
-  }))
-----
-
-|n/a
-|yes
-
-|[[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
-|n/a
-|`string`
-|n/a
-|yes
-
-|[[input_cluster_name]] <<input_cluster_name,cluster_name>>
-|n/a
-|`string`
-|n/a
-|yes
-
-|[[input_connectors]] <<input_connectors,connectors>>
-|n/a
-|`any`
-|n/a
-|yes
-
-|[[input_custom_image]] <<input_custom_image,custom_image>>
-|n/a
-|`string`
-|`null`
-|no
-
-|[[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
-|n/a
-|`map(string)`
-|`{}`
-|no
-
-|[[input_destination_namespace]] <<input_destination_namespace,destination_namespace>>
-|n/a
-|`string`
-|`"dex"`
-|no
-
-|[[input_helm_values]] <<input_helm_values,helm_values>>
-|n/a
-|`any`
-|`[]`
-|no
-
-|[[input_name]] <<input_name,name>>
-|n/a
-|`string`
-|`"dex"`
-|no
-
-|[[input_source_repository_url]] <<input_source_repository_url,source_repository_url>>
-|n/a
-|`string`
-|`"https://github.com/camptocamp/devops-stack-module-dex.git"`
-|no
-
-|[[input_source_target_revision]] <<input_source_target_revision,source_target_revision>>
-|n/a
-|`string`
-|`null`
-|no
-
-|[[input_target_revision]] <<input_target_revision,target_revision>>
-|Override for target revision of the application chart.
-|`string`
-|`"v1.0.0-alpha.2"`
-|no
-
 |===
 
 = Outputs
@@ -342,8 +342,8 @@ map(object({
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Description
-|[[output_clients]] <<output_clients,clients>> |n/a
 |[[output_id]] <<output_id,id>> |n/a
 |[[output_issuer_url]] <<output_issuer_url,issuer_url>> |n/a
+|[[output_clients]] <<output_clients,clients>> |n/a
 |===
 // END_TF_TABLES
