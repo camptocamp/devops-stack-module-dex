@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.0.0-alpha.3](https://github.com/camptocamp/devops-stack-module-dex/compare/v1.0.0-alpha.3...v2.0.0-alpha.3) (2023-07-11)
+## [1.0.0-alpha.3](https://github.com/camptocamp/devops-stack-module-dex/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2023-07-11)
 
 
 ### ⚠ BREAKING CHANGES
