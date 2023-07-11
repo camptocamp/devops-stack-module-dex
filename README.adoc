@@ -11,9 +11,9 @@ The following providers are used by this module:
 
 - [[provider_null]] <<provider_null,null>>
 
-- [[provider_argocd]] <<provider_argocd,argocd>> (>= 5)
-
 - [[provider_utils]] <<provider_utils,utils>>
+
+- [[provider_argocd]] <<provider_argocd,argocd>> (>= 5)
 
 === Resources
 
@@ -135,7 +135,7 @@ Description: Override for target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0-alpha.3"`
+Default: `"v1.0.0-alpha.4"`
 
 ==== [[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
 
@@ -272,7 +272,7 @@ Description: n/a
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override for target revision of the application chart.
 |`string`
-|`"v1.0.0-alpha.3"`
+|`"v1.0.0-alpha.4"`
 |no
 
 |[[input_base_domain]] <<input_base_domain,base_domain>>
