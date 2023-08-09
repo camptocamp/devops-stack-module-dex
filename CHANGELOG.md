@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1-alpha.4](https://github.com/camptocamp/devops-stack-module-dex/compare/v1.0.0-alpha.4...v1.0.1-alpha.4) (2023-08-09)
+
+
+### Bug Fixes
+
+* readd support to deactivate auto-sync which was broken by [#11](https://github.com/camptocamp/devops-stack-module-dex/issues/11) ([#13](https://github.com/camptocamp/devops-stack-module-dex/issues/13)) ([1dd1916](https://github.com/camptocamp/devops-stack-module-dex/commit/1dd1916d4b762497557dc60787265aab81c8e27a))
+
 ## [1.0.0-alpha.3](https://github.com/camptocamp/devops-stack-module-dex/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2023-07-11)
 
 
