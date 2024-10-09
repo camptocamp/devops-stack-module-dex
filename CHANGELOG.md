@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1-alpha.5](https://github.com/camptocamp/devops-stack-module-dex/compare/v1.0.1-alpha.4...v1.0.1-alpha.5) (2024-10-09)
+
+
+### Bug Fixes
+
+* **dex:** updated the provider for the dex module bcs it's still used ([#15](https://github.com/camptocamp/devops-stack-module-dex/issues/15)) ([77cd0cf](https://github.com/camptocamp/devops-stack-module-dex/commit/77cd0cfd8b196f573dfb3b9316f64bfbd3bbca0d))
+
 ## [1.0.1-alpha.4](https://github.com/camptocamp/devops-stack-module-dex/compare/v1.0.0-alpha.4...v1.0.1-alpha.4) (2023-08-09)
 
 
