@@ -3,7 +3,7 @@
 
 The following requirements are needed by this module:
 
-- [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 5)
+- [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 6)
 
 === Providers
 
@@ -11,7 +11,7 @@ The following providers are used by this module:
 
 - [[provider_utils]] <<provider_utils,utils>>
 
-- [[provider_argocd]] <<provider_argocd,argocd>> (>= 5)
+- [[provider_argocd]] <<provider_argocd,argocd>> (>= 6)
 
 - [[provider_null]] <<provider_null,null>>
 
@@ -19,8 +19,8 @@ The following providers are used by this module:
 
 The following resources are used by this module:
 
-- https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/application[argocd_application.this] (resource)
-- https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/project[argocd_project.this] (resource)
+- https://registry.terraform.io/providers/argoproj-labs/argocd/latest/docs/resources/application[argocd_application.this] (resource)
+- https://registry.terraform.io/providers/argoproj-labs/argocd/latest/docs/resources/project[argocd_project.this] (resource)
 - https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] (resource)
 - https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.this] (resource)
 - https://registry.terraform.io/providers/cloudposse/utils/latest/docs/data-sources/deep_merge_yaml[utils_deep_merge_yaml.helm_values] (data source)
@@ -135,7 +135,7 @@ Description: Override for target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0-alpha.4"`
+Default: `"v1.0.1-alpha.4"`
 
 ==== [[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
 
@@ -191,7 +191,7 @@ Description: n/a
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 5
+|[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 6
 |===
 
 = Providers
@@ -200,7 +200,7 @@ Description: n/a
 |===
 |Name |Version
 |[[provider_utils]] <<provider_utils,utils>> |n/a
-|[[provider_argocd]] <<provider_argocd,argocd>> |>= 5
+|[[provider_argocd]] <<provider_argocd,argocd>> |>= 6
 |[[provider_null]] <<provider_null,null>> |n/a
 |===
 
@@ -209,8 +209,8 @@ Description: n/a
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Type
-|https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/application[argocd_application.this] |resource
-|https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/project[argocd_project.this] |resource
+|https://registry.terraform.io/providers/argoproj-labs/argocd/latest/docs/resources/application[argocd_application.this] |resource
+|https://registry.terraform.io/providers/argoproj-labs/argocd/latest/docs/resources/project[argocd_project.this] |resource
 |https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] |resource
 |https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.this] |resource
 |https://registry.terraform.io/providers/cloudposse/utils/latest/docs/data-sources/deep_merge_yaml[utils_deep_merge_yaml.helm_values] |data source
@@ -272,7 +272,7 @@ Description: n/a
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override for target revision of the application chart.
 |`string`
-|`"v1.0.0-alpha.4"`
+|`"v1.0.1-alpha.4"`
 |no
 
 |[[input_base_domain]] <<input_base_domain,base_domain>>
